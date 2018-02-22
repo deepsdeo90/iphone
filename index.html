@@ -13,47 +13,81 @@
 <script type="text/javascript" src="libs/javascript/script.js"></script>
 
 </head>
-<body>
+<body >
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
 <!--<header>
 	<img src="http://via.placeholder.com/100x50" alt="Clash Royale"/>
 </header>-->
-<!--<nav>
+<nav>
 	<ul>
 		<li><a href="#">Home</a></li>
 		<li><a href="#">Prize &  Ranks</a></li>
 		<li><a href="#">Rewards</a></li>
 		<li><a href="#">Armoury</a></li>
 	</ul>
-</nav>-->
+</nav>
 <section>
-	<!--<h1>Fall Season</h1>	
-	<div class="badge">0% off</div>-->
+	<h1>Fall Season</h1>	
+	<!--<div class="badge">0% off</div>-->
 	<div id="slidecont">
             <div id="slidebar">
                 
                 <div class="cell">
-                    <p>
-                        Use your finger to drag it left and right to all of the items in the view.
+                	<a href="#">
+                	<p>
+                       <img src="http://via.placeholder.com/150x150">
                     </p>
+                    <p class="title">Legendary 1</p>	
+                	</a>
+                    
                 </div>
                 
                 <div class="cell">
+                	<a href="#">
                     <p>
-                        Since this is JavaScript it works on every mobile device with touch support
+                       <img src="http://via.placeholder.com/150x150">
                     </p>
+                    <p class="title">Legendary 2</p>
+                    </a>
                 </div>
-                
-                <div class="cell" id="iphone"> </div>
                 <div class="cell">
+                	<a href="#">
                     <p>
-                        Since this is JavaScript it works on every mobile device with touch support
+                       <img src="http://via.placeholder.com/150x150">
                     </p>
+                    <p class="title">Legendary 3</p>
+                    </a>
                 </div>
-                <div class="cell" id="iphone"> </div>
-                <div class="cell">
-                    <p>
-                        Since this is JavaScript it works on every mobile device with touch support
+                <div class="cell mythic">
+                	<a href="#" >
+                		<!-- The Modal -->
+
+
+                	<p>
+                       <img src="http://via.placeholder.com/150x150">
                     </p>
+                    <p class="title">Mythic </p> 
+                    <p class="title lock"><button id="myBtn">Info</button></p>
+                    
+                </a>
+                    
+                   
+                </div>
+                <div class="cell">
+                	<a href="#">
+                    <p>
+                       <img src="http://via.placeholder.com/150x150">
+                    </p>
+                    <p class="title">Discount</p>
+                    </a>
                 </div>
 
                 
@@ -64,4 +98,32 @@
 
 
 </body>
+<script type="text/javascript">
+	// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script>
 </html>

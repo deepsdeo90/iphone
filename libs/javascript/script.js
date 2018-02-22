@@ -39,7 +39,7 @@ touchslider = {
             $(this).children('.cell').each(function() {
                 $(this).css({
                     width: cellWidth + 'px',
-                    height: '90%',
+                    height: '68vh',
                     position: 'absolute',
                     left: x + 'px',
                     top: padding + 'px'
@@ -69,7 +69,7 @@ touchslider = {
                  * Then we aren't on a device that supports touch
                  */
                 $(this).css({
-                    'height': '385px',
+                    'height': '75vh',
                     'overflow': 'auto'
                 });
             }
@@ -271,4 +271,8 @@ touchslider = {
 
 $(document).ready(function() {
     touchslider.createSlidePanel('#slidebar', 200, 15);
+
+  
+ 
 });
+
