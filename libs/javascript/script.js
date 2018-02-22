@@ -1,4 +1,5 @@
 if (navigator.msMaxTouchPoints) {
+  //var slider = document.getElementById("slider");
 
   $('#slider').addClass('ms-touch');
 
