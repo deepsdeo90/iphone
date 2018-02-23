@@ -39,7 +39,7 @@ touchslider = {
             $(this).children('.cell').each(function() {
                 $(this).css({
                     width: cellWidth + 'px',
-                    height: '68vh',
+                    height: '63vh',
                     position: 'absolute',
                     left: x + 'px',
                     top: padding + 'px'
