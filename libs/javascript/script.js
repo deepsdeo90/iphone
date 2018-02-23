@@ -272,7 +272,13 @@ touchslider = {
 $(document).ready(function() {
     touchslider.createSlidePanel('#slidebar', 200, 15);
 
-  
+  $("#myBtn").on('click touchstart',function(){
+    $("#myModal").css("display","block");
+  });
+
+  $("#close").on('click touchstart',function(){
+    $("#myModal").css("display","none");
+  });
  
 });
 

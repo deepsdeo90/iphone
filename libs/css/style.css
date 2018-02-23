@@ -63,10 +63,10 @@ section h1{
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 20% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 40%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -103,13 +103,13 @@ section h1{
 	margin:75px auto;
 }*/
 .badge{
-	border:1px solid red;
-	width: 40px;
-	height: 40px;
-	position: relative;
-	left: -230px;
-	top:20px;
-	float: right;
+	border: 1px solid red;
+/* width: px; */
+/* height: 40px; */
+position: relative;
+left: 1em;
+top: 20px;
+float: left;
 }
 
 #output {
