@@ -13,7 +13,7 @@
   crossorigin="anonymous" async></script>-->
 
 </head>
-<body >
+<body onload="func();">
 
     <div class="heading">
          <h1>Legendary1 Branch<a onclick="window.history.go(-1); return false;"  class="close">X</a></h1>
@@ -38,6 +38,9 @@
    
 </body>
 <script type="text/javascript" async>
+    function func(){
+        alert();
+    }
 //create object for price 
 function modal(str){
     str.style.display="block";
@@ -71,7 +74,7 @@ function price(img,desc,qnty){
 
 var pArray = new Array();
 var displayNo = 28;
-alert(displayNo);
+
 
 for(var i=1;i<=30;i++){
     var des = "Price "+i;
