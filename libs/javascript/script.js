@@ -280,5 +280,14 @@ $(document).ready(function() {
     $("#myModal").css("display","none");
   });
  
+ $(function () {    
+    $('a').on('click touchend', function() { 
+        var link = $(this).attr('href');   
+        window.open(link,'_self'); // opens in new window as requested 
+
+        return false; // prevent anchor click    
+    });    
+});
+
 });
 
