@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Price Claim</title>
+	<link rel="stylesheet" type="text/css" href="libs/css/style.css">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="minimum-scale=1.0, width=device-width,height=device-height,initial-scale=1.0,maximum-scale=0.6667, user-scalable=no" name="viewport" />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+</head>
+<body >
+
+    <div class="heading">
+         <h1>Legendary1 Branch<a onclick="window.history.go(-1); return false;"  class="close">X</a></h1>
+    <p id="page-id">Page 1 of 2</p>
+    </div>
+   <div class="leg-outer">
+      <div class="leg-left" id="leg-left">
+        <a href="#" id="leg-left-a"><<</a>
+    </div>
+
+    <div class="leg-center">
+        <div class="row-1" id="row">
+            
+       
+        </div>
+           
+    </div>
+    <div class="leg-right" id="leg-right">
+        <a href="#" id="leg-right-a">>></a>
+    </div>
+</div>
+   
+</body>
+<script type="text/javascript">
+//create object for price 
+function modal(str){
+    str.style.display="block";
+    str.getElementsByTagName("span")[0].addEventListener("click",function(){
+        str.style.display="none";
+    });
+
+}
+function price(img,desc,qnty){
+        this.img = img;
+        this.desc=desc;
+        this.qnty=qnty;
+        this.show = function(){
+            var row = document.getElementById("row");
+
+                row.innerHTML +="<button onclick='modal(this.nextSibling)' class='col-1'><img src='"+this.img+"'><p>"+this.desc+"</p><p>"+this.qnty+"</p></button>"+
+                "<div id='myModal' class='modal'>"+
+              "<div class='modal-content'>"+
+                "<span class='close' id='close'>&times;</span>"+
+                "<p>"+this.desc+"</p>"+  
+             "</div>"+
+
+            "</div>";
+            //row.append(col);
+
+            
+
+        }
+       
+}
+
+var pArray = new Array();
+var displayNo = 28;
+
+for(var i=1;i<=30;i++){
+    var des = "Price "+i;
+    p1 = new price("http://via.placeholder.com/30x30",des,1);
+
+    pArray.push(p1);
+
+}
+var totalPages = (pArray.length/displayNo)+1;
+totalPages =Math.round(totalPages);
+
+function display(start,end){ 
+    var pageNo = (start/displayNo)+1;
+    var pageId = document.getElementById("page-id");
+        pageId.innerHTML= "Page "+pageNo+" of "+totalPages;
+    for(i=start;i<end && end<=pArray.length;i++){
+        //console.log(pArray[i]);
+          
+        pArray[i].show();
+        console.log(this);
+    }   
+    var noOfElements = end-start; 
+    if(start>=displayNo){
+            var leg_left_a =document.getElementById("leg-left-a");
+            leg_left_a.style.display="block";
+            leg_left_a.addEventListener("click",function(){
+            //console.log(pArray[28]);
+            var row = document.getElementById("row");
+                
+            row.innerHTML="";
+            display(0,displayNo);
+        });
+    }else{
+        var leg_left_a =document.getElementById("leg-left-a");
+        leg_left_a.style.display="none";
+    }
+    if(noOfElements>displayNo-1 && pArray.length>displayNo ){ 
+    var leg_right_a =document.getElementById("leg-right-a");
+    leg_right_a.style.display="block";
+    leg_right_a.addEventListener("click",function(){
+         //console.log(pArray[28]);
+         var row = document.getElementById("row");
+                
+         row.innerHTML="";
+        display(displayNo,pArray.length);
+    });
+    }else{
+        var leg_right_a =document.getElementById("leg-right-a");
+        leg_right_a.style.display="none";
+    }
+}
+
+display(0,displayNo);
+
+
+</script>
+</html>

@@ -215,4 +215,53 @@ background-color:rgba(0, 0, 0, 0.5);
   padding: 0;
 }
 
+.heading{
+    text-align: center;
+}
+.heading h1, p{
+    padding: 2px;
+    margin: 2px;
+}
+.leg-outer{
+    width: 90%;
+    margin: 5%;
+    display: -webkit-flex;
+}
+.row-1{
+        display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    /* flex-direction: row; */
+}
+.col-1{
+    border: 1px solid black;
+   -webkit-box-flex: 1; 
+    /*-webkit-box-flex: 0 0 12%;*/
+    margin: 1% 1%;
+    text-align: center;
+   width: 70px;
+height: 70px;
+}
+.leg-right, .leg-left{
+    margin:auto;
 
+    
+}
+#leg-right-a, #leg-left-a{
+    display: none;
+}
+.leg-center{
+    -webkit-box-flex: 1; width: 89%;
+    /*-webkit-box-flex:0 0 65em;*/
+}
+
+@-webkit-keyframes flipRightIn {
+    0% {
+        -webkit-transform: rotateY(-180deg) scale(.8);
+    }
+    100% {
+        -webkit-transform: rotateY(0deg) scale(1);
+    }
+}
+.flipright.in {
+    -webkit-animation-name: flipRightIn;
+}
